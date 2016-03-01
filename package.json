@@ -1,0 +1,22 @@
+{
+  "name": "nagios-node-wrapper",
+  "version": "0.0.4",
+  "description": "Simple Nagios plugin wrapper written for NodeJS developers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvke/nagios-node-wrapper.git"
+  },
+  "keywords": [
+    "nagios"
+  ],
+  "author": "jvke.co",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jvke/nagios-node-wrapper/issues"
+  },
+  "homepage": "https://github.com/jvke/nagios-node-wrapper"
+}

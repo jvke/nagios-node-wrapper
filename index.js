@@ -2,8 +2,9 @@
 
 (function() {
 
-  var nagios = function() {
+  var nagios = function(name) {
     this.opts = process.argv;
+    this.name = name;
   }
 
   module.exports = nagios;
@@ -24,13 +25,25 @@
     }
   };
 
+  nagios.prototype.exitMsg = function(state, msg) {
+    var message;
+    if (this.name && this.name.length > 0) {
+      message = this.name.toUpperCase();
+    } else {
+      message = this.opts[1].toUpperCase();
+    }
+    message += ' ' + this.getStateName(state);
+    message += ' - ' + msg;
+    return message;
+  }
+
   nagios.prototype.exit = function(state, msg) {
     if (msg === null || msg === undefined) {
       msg = this.getStateName(state);
     } else if (state === null || state === undefined) {
       state = 'Error: state was an unexpected value';
     }
-    console.log(state, msg);
+    console.log(this.exitMsg(state,msg));
     process.exit(state);
   };
 
