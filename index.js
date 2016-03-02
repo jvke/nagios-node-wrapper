@@ -5,7 +5,7 @@
   var nagios = function(name) {
     this.opts = process.argv;
     this.name = name;
-  }
+  };
 
   module.exports = nagios;
 
@@ -35,7 +35,7 @@
     message += ' ' + this.getStateName(state);
     message += ' - ' + msg;
     return message;
-  }
+  };
 
   nagios.prototype.exit = function(state, msg) {
     if (msg === null || msg === undefined) {
